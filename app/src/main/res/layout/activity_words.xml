@@ -49,20 +49,21 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="36dp"
         android:layout_marginEnd="8dp"
         android:text="Submit"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.111"
+        app:layout_constraintHorizontal_bias="0.262"
         app:layout_constraintStart_toEndOf="@+id/getString"
         app:layout_constraintTop_toBottomOf="@+id/wordsLeft" />
 
     <TextView
         android:id="@+id/whatToType"
-        android:layout_width="248dp"
-        android:layout_height="39dp"
-        android:layout_marginTop="12dp"
+        android:layout_width="255dp"
+        android:layout_height="31dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
         android:textAlignment="center"
-        app:layout_constraintTop_toBottomOf="@+id/getString"
-        tools:layout_editor_absoluteX="21dp" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/getString" />
 </android.support.constraint.ConstraintLayout>

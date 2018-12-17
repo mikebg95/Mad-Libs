@@ -3,12 +3,10 @@ package com.example.mike.studentname_pset2;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 
 import java.io.InputStream;
-import java.lang.reflect.Array;
 import java.util.Random;
 
 public class ChooseActivity extends AppCompatActivity {
@@ -28,6 +26,11 @@ public class ChooseActivity extends AppCompatActivity {
         Button clothesStory = findViewById(R.id.clothes);
         Button danceStory = findViewById(R.id.dance);
         Button randomStory = findViewById(R.id.random);
+
+
+        /*
+        when a story gets chosen, the story gets sent to the wordsActivity through an intent
+        */
 
         tarzanStory.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -73,30 +76,37 @@ public class ChooseActivity extends AppCompatActivity {
             }
         });
 
+        // when random story is chosen
         randomStory.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
+                // store story names in an array
                 String[] stories = {"tarzan", "university", "clothes", "dance"};
-//                int randomChoice = new Random().nextInt(stories.length);
+
+                // choose random story name from array
                 String randomStory = (stories[new Random().nextInt(stories.length)]);
 
-                if (randomStory.equals("tarzan")) {
-                    is = getResources().openRawResource(R.raw.madlib1_tarzan);
-                }
-                else if (randomStory.equals("university")) {
-                    is = getResources().openRawResource(R.raw.madlib2_university);
-                }
-                else if (randomStory.equals("clothes")) {
-                    is = getResources().openRawResource(R.raw.madlib3_clothes);
-                }
-                else if (randomStory.equals("dance")) {
-                    is = getResources().openRawResource(R.raw.madlib4_dance);
+                // random story get's chosen
+                switch (randomStory) {
+                    case "tarzan":
+                        is = getResources().openRawResource(R.raw.madlib1_tarzan);
+                        break;
+                    case "university":
+                        is = getResources().openRawResource(R.raw.madlib2_university);
+                        break;
+                    case "clothes":
+                        is = getResources().openRawResource(R.raw.madlib3_clothes);
+                        break;
+                    case "dance":
+                        is = getResources().openRawResource(R.raw.madlib4_dance);
+                        break;
                 }
 
+                // start new story object
                 story = new Story(is);
 
-                Log.d("story", story.toString());
-
+                // send story object to WordsActivity through intent
                 intent = new Intent(ChooseActivity.this, WordsActivity.class);
                 intent.putExtra("typestory", story);
                 startActivity(intent);
