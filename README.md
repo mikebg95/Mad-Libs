@@ -1,6 +1,6 @@
 # Mr Potatohead
 
-This app was made as part of the CS50 Web Track course.
+This app was made as part of the CS50 Android Track course.
 
 ### Content:
 This app allows the user to create random stories.
