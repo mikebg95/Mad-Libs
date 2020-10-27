@@ -1,3 +1,10 @@
+# Mr Potatohead
+
+This app was made as part of the CS50 Web Track course.
+
+### Content:
+This app allows the user to create random stories.
+
 The app contains four screens:
 1) The main screen which explains the app and contains a button "Get Started"
 2) The "choice" screen which lets the user choose a story.
